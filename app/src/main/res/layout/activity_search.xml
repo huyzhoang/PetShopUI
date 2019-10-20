@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SearchActivity">
+
+    <include layout="@layout/toolbar_search"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="19.2dp"
+        android:orientation="vertical">
+
+    <customfonts.MyTextView_Roboto_Regular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14.4sp"
+        android:textColor="#c2c4ca"
+        android:text="RECENT SEARCH"/>
+
+    <customfonts.MyTextView_Roboto_Regular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thú y"
+        android:textSize="14.4sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#4a4a4a"/>
+
+    <customfonts.MyTextView_Roboto_Regular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hoàng Nam"
+        android:layout_marginTop="10dp"
+        android:textSize="14.4sp"
+        android:textColor="#4a4a4a"/>
+
+    <customfonts.MyTextView_Roboto_Regular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phú Nhuận"
+        android:layout_marginTop="10dp"
+        android:textSize="14.4sp"
+        android:textColor="#4a4a4a"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="19.2dp"
+        android:orientation="vertical">
+
+    <customfonts.MyTextView_Roboto_Regular
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="SUGGESTED FOR YOU"
+        android:textColor="#c2c4ca"
+        android:textSize="14.4sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/RecyclerView_food13_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+</LinearLayout>
