@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".DetailSearchActivity">
+    tools:context=".DetailShopActivity">
 
 
     <ScrollView
@@ -19,37 +19,13 @@
             android:orientation="vertical">
 
 
-            <FrameLayout
+            <ImageView
+                android:id="@+id/img_thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="270dp">
-
-                <!--viewpager used-->
-
-
-                <android.support.v4.view.ViewPager
-
-                    android:id="@+id/viewpager"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
-                <!--circleindicator used-->
-
-                <me.relex.circleindicator.CircleIndicator
-                    android:id="@+id/indicator"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/view"
-                    android:layout_gravity="bottom"
-                    app:ci_drawable="@drawable/ic_circle"
-                    app:ci_drawable_unselected="@drawable/ic_circle"
-                    app:ci_height="7dp"
-                    app:ci_width="7dp" />
-
-                <include layout="@layout/toolbar_search_detail" />
-
-
-            </FrameLayout>
+                android:layout_height="200dp"
+                android:background="#6969"
+                android:scaleType="centerCrop"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,18 +36,21 @@
                 android:paddingLeft="13.4dp">
 
                 <customfonts.MyTextView_Roboto_Regular
+                    android:id="@+id/txtShopName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Shop Thu Thảo"
-                    android:textColor="#262628"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:textSize="19.2dp" />
 
                 <customfonts.MyTextView_Roboto_Regular
+                    android:id="@+id/txt_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="32 Trường Chinh"
-                    android:textColor="#9b9b9b"
+                    android:textColor="@color/black"
                     android:textSize="14.4sp" />
 
                 <LinearLayout
@@ -81,7 +60,7 @@
                     android:orientation="horizontal">
 
                     <RatingBar
-                        android:id="@+id/RatingBar_Id"
+                        android:id="@+id/RatingBar"
                         style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -95,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.4dp"
                         android:text="23 đánh giá"
-                        android:textColor="#9b9b9b"
+                        android:textColor="@color/black"
                         android:textSize="11.5sp" />
 
                 </LinearLayout>
@@ -115,9 +94,10 @@
                         <customfonts.MyTextView_Roboto_Regular
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="GIỜ MỞ CỬA"
-                            android:textColor="#c2c4ca"
-                            android:textSize="14.4sp" />
+                            android:text="OPENING HOURS"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16.7sp" />
 
 
                         <customfonts.MyTextView_Roboto_Regular
@@ -125,7 +105,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="10:00 - 23:00"
-                            android:textColor="#4a4a4a"
+                            android:textColor="@color/black"
                             android:textSize="14.4sp" />
 
                     </LinearLayout>
@@ -134,53 +114,32 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#f5f5f5"
-                android:padding="6dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-
-                android:paddingTop="15dp">
-
-                <customfonts.MyTextView_Roboto_Regular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="HÌNH ẢNH"
-                    android:textColor="#c2c4ca"
-                    android:paddingLeft="13.4dp"
-                    android:textSize="14.4sp" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/RecyclerView_Food5_Detail_Id"
-                    android:layout_width="match_parent"
-                    android:clipToPadding="false"
-                    android:paddingLeft="13.3dp"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:layout_marginBottom="15dp"/>
-
-            </LinearLayout>
-
-
-            <fragment
-                android:id="@+id/googleMap"
-                android:name="com.google.android.gms.maps.MapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="197.7dp" />
             <customfonts.MyTextView_Roboto_Regular
                 android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MÔ TẢ CỬA HÀNG"
+                android:text="SERVICES"
+                android:textStyle="bold"
                 android:layout_marginLeft="15dp"
                 android:textSize="16.7sp"
-                android:textColor="#c1c5c6"/>
+                android:textColor="@color/black"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_shop_service"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+            </android.support.v7.widget.RecyclerView>
+
+            <customfonts.MyTextView_Roboto_Regular
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="16.7sp"
+                android:textColor="@color/black"/>
+
             <customfonts.MyTextView_Roboto_Regular
                 android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
@@ -197,23 +156,6 @@ adipiscing elit, sed do eiusmod tempor incididunt ut
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#f5f5f5"
-                android:padding="6dp" />
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:background="#f5f5f5"
-                android:padding="6dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="13.4dp"
                 android:paddingTop="25dp">
@@ -222,19 +164,33 @@ adipiscing elit, sed do eiusmod tempor incididunt ut
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ĐÁNH GIÁ"
-                    android:textColor="#c2c4ca"
-                    android:textSize="14.4sp" />
+                    android:text="REVIEWS"
+                    android:textColor="@color/black"
+                    android:textSize="16.7sp"
+                    android:textStyle="bold" />
 
                 <customfonts.MyTextView_Roboto_Regular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:text="Xem tất cả đánh giá"
-                    android:textColor="#d22532"
-                    android:textSize="14.4sp" />
+                    android:text="See all"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="16.7sp" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_avg_rating"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="Average rating: 3.4"
+                android:drawableRight="@drawable/star"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"

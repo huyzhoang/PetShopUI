@@ -13,11 +13,10 @@ import adapter.ShopDetailSlidePagerAdapter;
 import me.relex.circleindicator.CircleIndicator;
 import model.DetailSearchModel;
 
-public class DetailSearchActivity extends AppCompatActivity {
+public class DetailShopActivity extends AppCompatActivity {
 
     Integer[] FoodImage_Id = {R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet};
     Integer[] Food_13_Image_Id={R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet};
-    //String[] Food5_RestaurantName_Id2 = {"Cocobolo Poolside Bar + Grill","The White Rabbit","Burlamacco Ristorante"};
 
     private RecyclerView recyclerView;
     private DetailSearchAdapter _detail_Search_adapter;
@@ -34,11 +33,11 @@ public class DetailSearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopdetail);
+        setContentView(R.layout.activity_shop_detail);
 
 
         recyclerView = findViewById(R.id.RecyclerView_Food5_Detail_Id);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DetailSearchActivity.this,LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DetailShopActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -51,11 +50,11 @@ public class DetailSearchActivity extends AppCompatActivity {
             modelArrayList.add(_detail_Search_model);
 
         }
-        _detail_Search_adapter = new DetailSearchAdapter(DetailSearchActivity.this,modelArrayList);
+        _detail_Search_adapter = new DetailSearchAdapter(DetailShopActivity.this,modelArrayList);
         recyclerView.setAdapter(_detail_Search_adapter);
 
 //Recycle 2
-        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(DetailSearchActivity.this);
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(DetailShopActivity.this);
         recyclerView.setLayoutManager(layoutManager1);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 

@@ -6,26 +6,25 @@
     android:background="@color/colorBlue">
 
     <ImageView
-        android:id="@+id/filter"
+        android:id="@+id/img_filter"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:tint="#fff"
         android:src="@drawable/controls"/>
 
-    <EditText
-        android:id="@+id/txt_homepage_search"
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@drawable/background_white_rect"
-        android:hint="Search pet shops"
-        android:textColor="#000000"
-        android:textSize="11.7sp"
-        android:padding="10dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="37dp"
+        android:textColor="#000000"
+        android:padding="4dp"
         android:inputType="text"
-        android:fontFamily=""
-        android:drawableRight="@drawable/searchright"
-        android:textColorHint="#7e7e7e"/>
+        android:textColorHint="#7e7e7e"
+        android:hint="Search pet shops, services">
+    </android.support.v7.widget.SearchView>
+
 
 </android.support.v7.widget.Toolbar>
