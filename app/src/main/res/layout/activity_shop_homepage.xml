@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    tools:context=".HomeActivity">
+    tools:context=".ShopHomepageActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="5dp"
         app:cardBackgroundColor="#FFFFFF">
-        <include layout="@layout/toolbar_homepage"/>
+        <include layout="@layout/toolbar_search"/>
     </android.support.v7.widget.CardView>
 
     <android.support.v4.widget.NestedScrollView
@@ -29,82 +29,54 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/home_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="16.7dp"
                 android:layout_marginRight="16.7dp"
-                android:layout_marginLeft="16.7dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-
-                    android:text="Best pet shops for you"
-                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_text_view_bg"
+                    android:text="Suggested for you"
+                    android:textColor="#000000"
                     android:textSize="16sp"
-                    android:textColor="#000000"/>
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_best_shop"
+                android:id="@+id/RecyclerViewBestShop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16.7dp"
-                android:paddingTop="16.7dp"
+                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:clipToPadding="false"/>
+                android:paddingLeft="16.7dp"
+                android:paddingTop="16.7dp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="16.7dp"
-                android:layout_marginLeft="16.7dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="Services"
+                    android:layout_weight="1"
                     android:fontFamily=""
-                    android:textColor="#000000"/>
-            </LinearLayout>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_shop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16.7dp"
-                android:paddingTop="16.7dp"
-                android:nestedScrollingEnabled="false"
-                android:clipToPadding="false"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="16.7dp"
-                android:layout_marginLeft="16.7dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
                     android:text="Discount"
-                    android:fontFamily=""
-                    android:textColor="#000000"/>
+                    android:background="@drawable/my_text_view_bg"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -113,28 +85,29 @@
                 android:id="@+id/RecyclerViewDiscount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16.7dp"
-                android:paddingTop="16.7dp"
+                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:clipToPadding="false"/>
+                android:paddingLeft="16.7dp"
+                android:paddingTop="16.7dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="16.7dp"
-                android:layout_marginLeft="16.7dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="Nearby"
+                    android:layout_weight="1"
                     android:fontFamily=""
-                    android:textColor="#000000"/>
+                    android:text="Nearby"
+                    android:background="@drawable/my_text_view_bg"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -142,57 +115,41 @@
                 android:id="@+id/RecyclerViewNearby"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16.7dp"
-                android:paddingTop="16.7dp"
+                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:clipToPadding="false"/>
+                android:paddingLeft="16.7dp"
+                android:paddingTop="16.7dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="16.7dp"
-                android:layout_marginLeft="16.7dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="Best reviewed shop"
+                    android:layout_weight="1"
                     android:fontFamily=""
-                    android:textColor="#000000"/>
+                    android:text="Top reviewed"
+                    android:background="@drawable/my_text_view_bg"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_salon_by_rating"
+                android:id="@+id/RecyclerViewTopReview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16.7dp"
-                android:paddingTop="16.7dp"
+                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:clipToPadding="false"/>
-
-            <LinearLayout
-                android:id="@+id/show_search_result_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_view_filter_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </android.support.v7.widget.RecyclerView>
-
-            </LinearLayout>
-
+                android:paddingLeft="16.7dp"
+                android:paddingTop="16.7dp" />
         </LinearLayout>
-
-
 
 
     </android.support.v4.widget.NestedScrollView>

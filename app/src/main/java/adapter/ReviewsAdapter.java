@@ -1,86 +1,66 @@
 package adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 
 import com.example.wolfsoft2.activity.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import model.ReviewsModel;
+import model.ModelReview;
 
 
 public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.MyViewHolder> {
 
-        Context context;
-        private List<ReviewsModel> modelRecyclerFood14List;
+        private Context mContext;
+        private ArrayList<ModelReview> modelReviews;
+        private String cusName;
+        private String cusAvt;
+        private int rating;
+        private String comment;
+
+        public ReviewsAdapter(Context mContext, ArrayList<ModelReview> modelReviews) {
+                this.mContext = mContext;
+                this.modelReviews = modelReviews;
+        }
+
 
         @Override
-        public ReviewsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.item_reviews, parent, false);
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                View view;
+                LayoutInflater mInflater = LayoutInflater.from(mContext);
+                view = mInflater.inflate(R.layout.item_reviews, parent, false);
 
-                return new ReviewsAdapter.MyViewHolder(view);
+                return new MyViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(ReviewsAdapter.MyViewHolder holder, int position) {
-                ReviewsModel modelfoodrecycler = modelRecyclerFood14List.get(position);
+        public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-                holder.foodtext1.setText(modelfoodrecycler.getFoodtext1());
-                holder.foodtext2.setText(modelfoodrecycler.getFoodtext2());
-                holder.foodtext3.setText(modelfoodrecycler.getFoodtext3());
-                //holder.foodtext4.setText(modelfoodrecycler.getFoodtext4());
-
-                holder.circleviewimg1.setImageResource(modelfoodrecycler.getCircleviewimg1());
-                holder.foodimg1.setImageResource(modelfoodrecycler.getFoodimg1());
-                holder.foodimg2.setImageResource(modelfoodrecycler.getFoodimg1());
-                holder.foodimg3.setImageResource(modelfoodrecycler.getFoodimg1());
-                holder.foodimg4.setImageResource(modelfoodrecycler.getFoodimg1());
-
-                if(position==1){
-                        holder.ll1.setVisibility(View.VISIBLE);
-                }
-                else {
-                        holder.ll1.setVisibility(View.GONE);
-                }
 
         }
 
         @Override
         public int getItemCount() {
-                return modelRecyclerFood14List.size();
+                return modelReviews.size();
         }
 
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-                TextView foodtext1, foodtext2, foodtext3, foodtext4;
-                ImageView circleviewimg1, foodimg1, foodimg2, foodimg3, foodimg4;
-                LinearLayout ll1;
+        public static class MyViewHolder extends RecyclerView.ViewHolder {
+
 
                 public MyViewHolder(View itemView) {
                         super(itemView);
-                        foodtext1 = itemView.findViewById(R.id.foodtext1);
-                        foodtext2 = itemView.findViewById(R.id.foodtext2);
-                        foodtext3 = itemView.findViewById(R.id.foodtext3);
 
-                        circleviewimg1 = itemView.findViewById(R.id.circleviewimg1);
-                        foodimg1 = itemView.findViewById(R.id.foodimg1);
-                        foodimg2 = itemView.findViewById(R.id.foodimg2);
-                        foodimg3 = itemView.findViewById(R.id.foodimg3);
-                        foodimg4 = itemView.findViewById(R.id.foodimg4);
-                        ll1=itemView.findViewById(R.id.ll1);
                 }
-        }
-
-        public ReviewsAdapter(Context mainActivityContacts, List<ReviewsModel> offerList) {
-                this.modelRecyclerFood14List = offerList;
-                this.context = mainActivityContacts;
         }
 }

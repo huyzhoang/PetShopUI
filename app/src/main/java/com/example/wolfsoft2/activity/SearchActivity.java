@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 
 import adapter.SearchAdapter;
-import model.SearchModel;
+import model.ModelSearch;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -18,7 +18,7 @@ public class SearchActivity extends AppCompatActivity {
    Integer[] ShopImageId = {R.drawable.vet,R.drawable.vet};
 
    private RecyclerView recyclerView;
-   private ArrayList<SearchModel> modelArrayList;
+   private ArrayList<ModelSearch> modelArrayList;
    private SearchAdapter search_adapter;
 
     @Override
@@ -26,8 +26,6 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
-        recyclerView = findViewById(R.id.RecyclerView_food13_id);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -35,7 +33,7 @@ public class SearchActivity extends AppCompatActivity {
         modelArrayList = new ArrayList<>();
 
         for (int i = 0; i< ShopNameId.length; i++){
-            SearchModel search_model = new SearchModel(ShopNameId[i], ShopAddressId[i], ShopImageId[i]);
+            ModelSearch search_model = new ModelSearch(ShopNameId[i], ShopAddressId[i], ShopImageId[i]);
             modelArrayList.add(search_model);
         }
         search_adapter = new SearchAdapter(SearchActivity.this,modelArrayList);

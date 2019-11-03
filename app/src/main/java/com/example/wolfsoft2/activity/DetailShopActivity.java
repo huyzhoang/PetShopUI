@@ -7,11 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
-import adapter.DetailSearchAdapter;
-import adapter.ShopDetailSlidePagerAdapter;
 import me.relex.circleindicator.CircleIndicator;
-import model.DetailSearchModel;
 
 public class DetailShopActivity extends AppCompatActivity {
 
@@ -19,15 +15,7 @@ public class DetailShopActivity extends AppCompatActivity {
     Integer[] Food_13_Image_Id={R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet,R.drawable.vet};
 
     private RecyclerView recyclerView;
-    private DetailSearchAdapter _detail_Search_adapter;
-    private ArrayList<DetailSearchModel> modelArrayList;
 
-
-//viewpager code
-
-    private ShopDetailSlidePagerAdapter loginPagerAdapter;
-    private ViewPager viewPager;
-    private CircleIndicator indicator;
 
 
     @Override
@@ -36,36 +24,15 @@ public class DetailShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop_detail);
 
 
-        recyclerView = findViewById(R.id.RecyclerView_Food5_Detail_Id);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DetailShopActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        modelArrayList = new ArrayList<>();
-
-
-        for (int i=0;i<FoodImage_Id.length;i++){
-            DetailSearchModel _detail_Search_model = new DetailSearchModel(FoodImage_Id[i],Food_13_Image_Id[i]);
-
-            modelArrayList.add(_detail_Search_model);
-
-        }
-        _detail_Search_adapter = new DetailSearchAdapter(DetailShopActivity.this,modelArrayList);
-        recyclerView.setAdapter(_detail_Search_adapter);
 
 //Recycle 2
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(DetailShopActivity.this);
         recyclerView.setLayoutManager(layoutManager1);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-
-        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
-        loginPagerAdapter = new ShopDetailSlidePagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(loginPagerAdapter);
-        indicator.setViewPager(viewPager);
-        loginPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
     }
 }

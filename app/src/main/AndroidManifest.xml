@@ -17,15 +17,13 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.example.wolfsoft2.activity.DetailShopActivity" />
         <activity android:name="com.example.wolfsoft2.activity.SearchActivity" />
-        <activity android:name="com.example.wolfsoft2.activity.ReviewsActivity" />
-        <activity android:name="com.example.wolfsoft2.activity.HomeActivity">
+        <activity android:name="com.example.wolfsoft2.activity.ShopHomepageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.wolfsoft2.activity.FilterActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

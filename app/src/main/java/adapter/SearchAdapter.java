@@ -13,14 +13,14 @@ import com.example.wolfsoft2.activity.R;
 
 import java.util.ArrayList;
 
-import model.SearchModel;
+import model.ModelSearch;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<SearchModel> modelArrayList;
+    private ArrayList<ModelSearch> modelArrayList;
 
-    public SearchAdapter(Context context, ArrayList<SearchModel> modelArrayList) {
+    public SearchAdapter(Context context, ArrayList<ModelSearch> modelArrayList) {
         this.context = context;
         this.modelArrayList = modelArrayList;
     }
@@ -29,19 +29,17 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_seach, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_search_result, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        SearchModel search_model = modelArrayList.get(position);
+        ModelSearch search_model = modelArrayList.get(position);
 
         holder.ShopNameId.setText(search_model.getShopNameId());
         holder.ShopAddressId.setText(search_model.getShopAddressId());
         holder.ShopImageId.setImageResource(search_model.getShopImageId());
-
-
 
     }
 
@@ -57,9 +55,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ShopNameId = itemView.findViewById(R.id.ShopNameId);
-            ShopAddressId = itemView.findViewById(R.id.ShopAddressId);
-            ShopImageId = itemView.findViewById(R.id.ShopImageId);
+            ShopNameId = itemView.findViewById(R.id.shop_name);
+            ShopAddressId = itemView.findViewById(R.id.shop_address);
+            ShopImageId = itemView.findViewById(R.id.shop_img);
         }
     }
 }
